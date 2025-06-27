@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 20px; }
+    h2 { color: #333; }
+    form { background-color: #fff; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    input, select, textarea { width: 100%; padding: 8px; margin: 6px 0 12px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #45a049; }
+  </style>
+</head>
+<body>
+
+<h2>Patient Registration</h2>
+<form action="submit_patient.php" method="post">
+  <input type="text" name="patient_name" placeholder="Patient Name" required>
+  <input type="number" name="age" placeholder="Age">
+  <input type="text" name="contact" placeholder="Contact">
+  <input type="text" name="disease" placeholder="Disease">
+  <input type="date" name="admission_date" required>
+  <button type="submit">Register Patient</button>
+</form>
+
+<h2>Doctor Registration</h2>
+<form action="submit_doctor.php" method="post">
+  <input type="text" name="name" placeholder="Doctor Name" required>
+  <input type="text" name="specialization" placeholder="Specialization">
+  <input type="text" name="contact" placeholder="Contact">
+  <input type="email" name="email" placeholder="Email" required>
+  <button type="submit">Register Doctor</button>
+</form>
+
+<h2>Book Appointment</h2>
+<form action="submit_appointment.php" method="post">
+  <input type="number" name="patient_id" placeholder="Patient ID" required>
+  <input type="number" name="doctor_id" placeholder="Doctor ID" required>
+  <input type="date" name="appointment_date" required>
+  <textarea name="purpose" placeholder="Purpose of Appointment"></textarea>
+  <button type="submit">Book Appointment</button>
+</form>
+
+<h2>Medical Record Entry</h2>
+<form action="submit_record.php" method="post">
+  <input type="number" name="patient_id" placeholder="Patient ID" required>
+  <input type="text" name="diagnosis" placeholder="Diagnosis">
+  <textarea name="treatment" placeholder="Treatment Details"></textarea>
+  <textarea name="prescription" placeholder="Prescription Details"></textarea>
+  <input type="date" name="record_date" required>
+  <button type="submit">Add Medical Record</button>
+</form>
+
+<h2>Billing Entry</h2>
+<form action="submit_billing.php" method="post">
+  <input type="number" name="patient_id" placeholder="Patient ID" required>
+  <input type="number" step="0.01" name="amount" placeholder="Amount" required>
+  <input type="text" name="payment_status" placeholder="Payment Status">
+  <input type="date" name="payment_date" required>
+  <button type="submit">Generate Bill</button>
+  
+</form>
+<h2>View Database Records</h2>
+<a href="display_data.php">
+  <button type="button">View All Records</button>
+</a>
+</body>
+</html>
